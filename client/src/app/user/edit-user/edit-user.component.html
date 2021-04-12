@@ -1,0 +1,30 @@
+<div>
+  <h2>Редактирование профиля</h2>
+  <form [formGroup]="profileEditForm">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Имя</mat-label>
+      <input matInput
+             formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Фамилия</mat-label>
+      <input matInput
+             formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Биография</mat-label>
+      <input matInput
+             formControlName="bio">
+    </mat-form-field>
+
+    <div class="row">
+      <button (click)="closeDialog()" class="w-50"
+              mat-button mat-dialog-close disableRipple>
+        Отмена
+      </button>
+      <button color="primary" class="w-50" [disabled]="profileEditForm.invalid" (click)="submit()" mat-button disableRipple>
+        Отредактировать
+      </button>
+    </div>
+  </form>
+</div>
